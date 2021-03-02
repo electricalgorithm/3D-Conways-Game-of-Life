@@ -1,8 +1,8 @@
-# Conway's Game of Life in 3D
+# Conway's Game of Life 3D
 
 This repository is both provides an API for Game of Life and an command line application interface to use the API. I built the API and the algorithm just for fun and learn new things. I hope you'll like it.
 
-Note that, there may be lots of bugs, if you want to contribute it, I would be very happy.
+Note that, there may be lots of bugs and lots of performance issues, if you want to contribute it, I would be very happy.
 
 ![An example of terminal output](https://github.com/electricalgorithm/3D-Conways-Game-of-Life/blob/main/assets/terminal-output.png?raw=true)
 
@@ -52,6 +52,7 @@ The application requires using flags to simulate. They are:
 * `--page=`	**Required**. Must be an _integer_. It sets the Game of Life's page/z dimension for randomizing values. _The life's grid won't be restricted to these dimensions._
 * `--gen=`	**Required**. Must be an _integer_. It is the number of the generations which will be calculated. For higher numbers, the simulation will be very slow. Consider changing  `LENGTH_EXPAND_RATE` constant with a lower value in `Space.py` file.
 * `--chance=` Optional. Must be an _integer_. It defines the chance of randomize() function as one over given integer.
+* `--rules=` Optional. Default is "B3/S23". It defines the ruleset.
 * `--waitms=` Optional. Must be an _integer_. This is the delay in the calculations of the generations. Don't sure if it works correctly, check it out.
 * `--renderer=` Optional. Must be `mayavi`, `matplotlib` or `matplotlib:1by1`. This the rendering method of 3D view. If not spesified, nothing will pop-up to show you the generations.
 * `--save=` Optional. Default is `True`. Must be `True` or `False`. To do not save matplotlib figures, make it `False`.
@@ -59,7 +60,7 @@ The application requires using flags to simulate. They are:
 ##### Example
 
 ```sh
-~$ python main.py --row=5 --col=5 --page=4 --chance=4 --gen=2 --renderer=matplotlib:1by1 --save=True --save-prefix=GoL-example
+~$ python main.py --row=5 --col=5 --page=4 --chance=4 --rules=B36/S23 --gen=2 --renderer=matplotlib:1by1 --save=True --save-prefix=GoL-example
 ```
 
 > Note: If you use 1by1 method, you have to close the current figure window to see next generation.

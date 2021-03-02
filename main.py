@@ -20,6 +20,7 @@ if __name__ == "__main__":
     RENDERER: str = ""
     SAVE: bool = True
     SAVE_PRE: str = "GoL"
+    RULESET: str = "B3/S23"
     onebyone: bool = False
 
     if sys.argv[1] in ["--help", "-h"]:
@@ -52,6 +53,8 @@ if __name__ == "__main__":
                 SAVE = bool(arguments[1])
             elif arguments[0] == "--save-prefix":
                 SAVE_PRE = arguments[1]
+            elif arguments[0] == "--rules":
+            	 RULESET = arguments[1]
         except ValueError or IndexError as error:
             print("Something wrong. Check the provided flags.")
             exit(0)
@@ -64,7 +67,7 @@ if __name__ == "__main__":
     print("Note that, restriction of dimensions doesn't work yet.")
     # Creating the Space object and randomize it.
     Life = Space(PAGE, ROW, COL, chance_1_divided_by=CHANCE)
-    # Life.set_rules("B36/S23")
+    Life.set_rules(RULESET)
     Life.randomize()
 
     # What to do with program
