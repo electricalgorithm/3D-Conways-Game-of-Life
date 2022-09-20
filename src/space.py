@@ -1,4 +1,4 @@
-from VoxelCell import VoxelCell
+from .voxelcell import VoxelCell
 import numpy as np
 from random import randint
 from copy import deepcopy

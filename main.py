@@ -1,6 +1,6 @@
-from Space import Space
-from VoxelCell import VoxelCell
-from utils import create_matplotlib_graphs, create_mayavi_animation
+from src.space import Space
+from src.voxelcell import VoxelCell
+from src.utils import create_matplotlib_graphs, create_mayavi_animation
 import sys
 
 

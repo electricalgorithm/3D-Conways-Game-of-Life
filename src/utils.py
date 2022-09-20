@@ -1,4 +1,4 @@
-from Space import Space
+from .space import Space
 
 
 def workspace_divider(needed: int):
